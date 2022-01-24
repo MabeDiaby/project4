@@ -1,0 +1,8 @@
+{% block content %}
+{% load static %}
+{% load widget_tweaks %}
+<link rel="stylesheet" href="{% static 'resume_builder/form.css' %}">
+  <h2>Homepage</h2>
+  <p>Hello {{ user.username }}!</p>
+  <a href="{% url 'post_list' %}">Get Started</a>
+{% endblock %}

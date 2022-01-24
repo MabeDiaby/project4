@@ -1,0 +1,111 @@
+{% extends "resume_builder/base.html" %}
+{% block content %}
+{% for post in post.all %}
+<section class="header">
+    <div class="mainContainer">
+        <div class="headline">
+            <h1>{{ post.headline }}</h1>
+            <td>
+                <a class="headerUpdate" href="{% url 'post_edit' post.pk %}">Update</a>
+            </td>
+        </div>
+        
+        <div class="introWrapper">
+            <div class="introLeft">
+                <p id="profilePic" class="userImage">{{ profile.profile_pic }} profile pic</p>
+                    <p class="userImage" style="text-align: center;">{{ profile.name }} profile name</p>
+                    <p style="text-align: center; line-height: 0;">{{ post.sub_headline }} </p>
+                </div>
+                
+                <div class="introRight">
+                    <div class="introduction">
+                        <p>{{ post.body }}</p>
+                        <!-- <a href="#">Ghost Link remember to change</a> -->
+                    </div>
+                    {% for socials in post.socials.all %}
+                    <div class="socials">
+                            <a href="{{ socials.link }}" target="_blank">
+                                {{ socials.name }}
+                            </a>
+                            <td>
+                                <a href="{% url 'socials_edit' socials.pk %}">Update</a>
+                                <a href="{% url 'socials_delete' socials.pk %}">Delete</a>
+                            </td>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section class="mainContainer">
+        <div class="aboutMe">
+            <div class="about">
+                <h4>About me section</h4>
+                <p>
+                    {{ post.intro }}
+                </p>
+                <a href="{{ post.resume }}" target="_blank">
+                    Resume
+                </a>
+                <h4>Languages</h4>
+                <div id="language">
+                    <ul>
+                        <li>
+                            {{ post.language }}
+                        </li>
+                    </ul>
+                </div>
+                <h2>
+                    <section class="mainContainer">
+                        <div class="portfolio">
+                            <h3 style="text-align: center";>
+                                Portfolio section
+                            </h3>
+                            {% for project in post.projects.all %}
+                            <!-- will be a list with links to live server/blog -->
+                            <div class="postWrap">
+                                <div>
+                                    <div class="post">
+                                        <p class="postPic"><img class="pic" src="{{ project.image_url }}" alt="portfolio" width="200"
+                                            height="80"></p>
+                                    <div class="postPreview">
+                                        <h6 class="postTitle">{{ project.name }}</h6>
+                                        <p class="postBody" id="stack">{{ project.stack }}
+                                        </p>
+                                        <p>{{ project.description }}</p>
+                                        <div class="linkContainer">
+                                            <ul>
+                                            <li>
+                                                <a href="{{ project.gitlink }}" target="_blank">
+                                                    Github Link
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ project.livelink }}" target="_blank">
+                                                    Live Link
+                                                </a>
+                                            </li>
+                                            
+                                        <td>
+                                            <li>
+                                                <a href="{% url 'project_edit' project.pk %}">Update</a>      
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'project_delete' project.pk %}">Delete</a>
+                                            </li>
+                                        </td>
+                                    </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </h2>
+{% endfor %}
+{% endblock %}

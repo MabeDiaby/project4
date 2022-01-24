@@ -1,0 +1,326 @@
+:root {
+    /* just to see if this is working ok will change later */
+    --headers:black;
+    --subheaders: red;
+
+    --firstBackground: #0B0c10;
+    --fonts: #66fcf1;
+    --secondary: #45a29e;
+
+    --borders: #c1c1c1;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--firstBackground);
+    color: var(--fonts);
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: var(--headers);
+    color: var(--fonts);
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size:56px;
+}
+h2 {
+    font-size:36px;
+}
+h3 {
+    font-size:28px;
+}
+h4 {
+    font-size:24px;
+}
+h5 {
+    font-size:20px;
+}
+h6 {
+    font-size:16px;
+}
+p {
+    font-size:16px;
+    
+}
+a {
+    font-size: 16px;
+}
+
+p, li, span, input, select, textarea{
+    color: var(--secondary);
+    font-size: 20px;
+}
+
+.header {
+    /* going to change this also just seeing if it works */
+    background-color: var(--firstBackground);
+    border-bottom:1px solid var(--borders);
+    overflow: auto;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.mainContainer {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: var(--firstBackground);
+    
+}
+
+
+.introWrapper {
+    -webkit-box-shadow: -1px 1px 8px -1px #000000;
+    -maz-box-shadow: -1px 1px 8px -1px #000000;
+    box-shadow: 5px 5px 8px 5px #000000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'introLeft introRight'
+    ;
+    background-color: var(--firstBackground);
+}
+
+.contactWrap {
+    -webkit-box-shadow: -1px 1px 8px -1px #000000;
+    -maz-box-shadow: -1px 1px 8px -1px #000000;
+    box-shadow: 5px 5px 8px 5px #000000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'contactRight contactLeft'
+    ;
+    background-color: var(--firstBackground);
+}
+
+
+.intro {
+    justify-content: space-evenly;
+
+}
+#profilePic {
+    display:block;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border: 2px solid;
+}
+
+#nav {
+    margin:0;
+    padding:10px;
+    
+}
+
+#nav li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 5px;
+    
+}
+
+.introduction {
+    width: 300px;
+    border: 1.5px solid;
+    padding: 15px;
+}
+
+.introLeft {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    grid-area: introLeft;
+}
+
+.contactLeft {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-right: 15px;
+    grid-area: contactLeft;
+}
+
+.contactForm {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.contactRight {
+    grid-area: contactRight;
+    display: grid;
+    align-content: center;
+    margin-left: 15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.introRight {
+    grid-area: introRight;
+    display: grid;
+    align-content: center;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.aboutMe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 100px;
+}
+
+.headline {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 10em;
+}
+
+.headerUpdate {
+    font-size: 20px;
+    padding-bottom: 30px;
+    margin-top: -50px;
+    margin-left: -80px;
+}
+
+.socials {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.postWrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 320px);
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.post {
+    border: 1px solid;
+}
+
+.postPreview {
+    padding: 15px;
+    background-color: var(--firstBackground);
+}
+
+.linkContainer {
+    display: block;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    margin-right: 50px;
+}
+
+#stack {
+    color: rgba(128, 128, 128, 0.582);
+}
+
+a {
+    color: #b1a296;
+}
+.postTitle {
+    margin: 0;
+}
+
+#submit {
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(246, 153, 169, 0.246);
+    border: none;
+}
+
+.postBody {
+    font-size: 14px;
+}
+
+.postPic {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.pic {
+    display: block;
+    width: 98%;
+    text-align: center;
+    height: 180px;
+    object-fit: cover;
+    margin-top: -15px;
+    margin-left: 4px;
+}
+
+#language {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #b19076bc;
+    font-size: 20px;
+}
+
+.navbar {
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 40px;
+}
+
+.contactInput {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid;
+    font-size: 14px;
+}
+
+.contactForm label {
+    line-height: 2.7em;
+}
+
+.contactForm textarea {
+    min-height: 100px;
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    /* dont know what color yet */
+}
+
+@media screen and (max-width: 1200px) {
+    .mainContainer {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .introWrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'introLeft'
+        'introRight'
+        ;
+    }
+
+    .introRight {
+        justify-content: center;
+    }
+}

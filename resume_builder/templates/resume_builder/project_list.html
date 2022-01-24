@@ -1,0 +1,28 @@
+{% extends "resume_builder/post_list.html" %}
+{% block project %}
+<section class="mainContainer">
+    <div class="portfolio">
+        <h3 style="text-align: center";>
+            Portfolio section
+        </h3>
+        {% for project in projects.all %}
+        <!-- will be a list with links to live server/blog -->
+        <div class="postWrap">
+            <div>
+                <div class="post">
+                    <p class="postPic">{{ project.image_url }}</p>
+                <div class="postPreview">
+                    <h6 class="postTitle">{{ project.name }}</h6>
+                    <p class="postBody">{{ project.stack }}
+                    </p>
+                    <p>{{ project.description }}</p>
+                    <p>{{ project.livelink }}</p>
+                    <p>{{ project.gitlink }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+<h2>socials <a href="{% url 'socials_create' %}">(+)</a></h2>
+<ul>
+  {% for social in socials %}
+  <li>
+    <a href="{% url 'socials_detail' pk=socials.pk %}"> {{ socials.name }} </a>
+  </li>
+  {% endfor %}
+</ul>
+

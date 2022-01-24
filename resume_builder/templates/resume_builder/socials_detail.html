@@ -1,0 +1,13 @@
+<h2>{{ socials.name }} <a href="/socials/new">(edit)</a></h2>
+<h4>{{ socials.link }}</h4>
+
+<img src="{{  socials.image_url }}" alt="" class="artist-photo" />
+
+<h3>socials <a href="">(+)</a></h3>
+<ul>
+  {% for social in post.socials.all %}
+  <li>
+    <a href="">{{ socials.name }}-{{ socials.Link }}</a>
+  </li>
+  {% endfor %}
+</ul>

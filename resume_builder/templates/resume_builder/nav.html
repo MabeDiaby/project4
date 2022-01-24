@@ -1,0 +1,56 @@
+<!-- tunr/templates/tunr/base.html -->
+<html>
+  <head>
+        <title>{{ profile.name }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'resume_builder/base.css' %}">
+  </head>
+  <body>
+    <nav>
+        <section class="navbar">
+            <div class="intro">
+                <ul id = "nav">
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Resume
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/post/new">
+                            Info
+                    </li>
+                    <li>
+                        <a target="_blank" href="/socials/new">
+                            New Socials
+                    </li>
+                    <li>
+                        <a target="_blank" href="/tag/new">
+                            tags
+                    </li>
+                    <li>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </nav>
+  </body>
+</html>

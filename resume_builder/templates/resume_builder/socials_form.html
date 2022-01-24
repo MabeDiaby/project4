@@ -1,0 +1,17 @@
+{% load static %}
+{% load widget_tweaks %}
+<link rel="stylesheet" href="{% static 'resume_builder/form.css' %}">
+{% block content %}
+<div class="socialFormContainer">
+<h3>Social Form</h3>
+<hr>
+
+<form action="" method="post">
+	{% csrf_token %}
+	<li class="socialForm"> {{form}} </li>
+	<div class="my-button">
+	<input class="tagForm" type="submit" class="submit-btn">
+</div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% load static %}
+{% load widget_tweaks %}
+<link rel="stylesheet" href="{% static 'resume_builder/form.css' %}">
+{% block content %}
+<div class="tagFormContainer">
+<h3 class="tagTitle">Tag Form</h3>
+
+<form action="" method="post">
+	{% csrf_token %}
+	<p class="tagForm"> {{form}} </p>
+	<div class="my-button">
+	<input class="tagForm" type="submit" class="submit-btn">
+</div>
+</form>
+</div>
+{% endblock %}

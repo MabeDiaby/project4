@@ -1,0 +1,116 @@
+<!-- tunr/templates/tunr/base.html -->
+<html>
+  <head>
+        <title>Resume Builder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'resume_builder/base.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+  </head>
+  {% if user.is_authenticated %}
+  <body>
+    <nav>
+        <section class="navbar">
+            <div class="intro">
+                <ul id = "nav">
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Resume
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="/tag/new">
+                            Tags
+                    </li>
+                    <li>
+                        <a target="_blank" href="/post/new">
+                            Info
+                    </li>
+                    <li>
+                        <a target="_blank" href="/socials/new">
+                            New Socials
+                    </li>
+                    <li>
+                        <a target="_blank" href="/project/new">
+                            Projects
+                    </li>
+                    <li>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}">
+                            Logout
+                        </a>
+                        {% else %}
+                        <h2>Enjoy!</h2>
+                    {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </nav>
+    {% block content %}
+    {% endblock %}
+                    <section class="mainContainer">
+                        <div class="contact">
+                            <h3>
+                                Contact
+                            </h3>
+                            <div class = "contactWrap">
+                                <div class="contactRight">
+                                    <!-- <img src="{}"> -->
+                                    <p>profile pic: {{ profile.profile_pic }} </p>
+                                    <p>name: {{ profile.name }}</p>
+                                    <p>email: {{ profile.email }}</p>
+                                </div>
+                                
+                                <form id="contactForm">
+                                    <div class="contactLeft">
+                                        <label>Name</label>
+                                        <input class="contactInput"
+                                        type="text"
+                                        name="name"
+                                        >
+                                        <label>Email</label>
+                                        <input
+                                        class="contactInput"
+                                        type="text"
+                                        name="email"
+                                        >
+                                        <label>Message</label>
+                                        <textarea
+                                        class="contactInput"
+                                        name="message"
+                                        >
+                                    </textarea>
+                                    <input
+                                    id="submit"
+                                    type="submit"
+                                    value="Send"
+                                    >
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+  </body>
+</html>
