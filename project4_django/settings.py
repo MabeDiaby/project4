@@ -104,7 +104,7 @@ DATABASES = {
         'NAME': 'project4',
         'USER': 'project4ruser',
         'PASSWORD': 'project4',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
     }
 }
 
