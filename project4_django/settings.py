@@ -105,18 +105,18 @@ WSGI_APPLICATION = 'project4_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASE_URL= postgres://project4ruser:project4@localhost:8000/project4
+DATABASE_URL= sqlite://project4ruser:project4@localhost:8000/project4
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'project4',
-    #     'USER': 'project4ruser',
-    #     'PASSWORD': 'project4',
-    #     # 'HOST': 'localhost',
-    #     'HOST': 'resume-website-builder.herokuapp.com',
-    # }
+    'default': dj_database_url.config(conn_max_age=600),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'project4',
+        # 'USER': 'project4ruser',
+        # 'PASSWORD': 'project4',
+        # # 'HOST': 'localhost',
+        # 'HOST': 'resume-website-builder.herokuapp.com',
+    }
 }
 
 
